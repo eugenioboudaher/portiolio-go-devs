@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        body {
+            background-image: url(Background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container {
+            width: 360px;
+            height: 712px;
+            margin: auto;
+            padding-top: 56px;
+
+        }
+        #profile img {
+            width: 112px;
+            margin: auto;
+            margin-top: 20px;            
+        }
+        #profile {
+            display: flex;
+            justify-content: center;
+            font-family: 'Inter';
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            padding: 24px;
+        }
+        #profile p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 8px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        ul li a{
+            border: 1px solid rgb(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 52px;
+            background-color: rgb(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: aqua;
+            font-family: 'Inter';
+            text-decoration: none;
+            backdrop-filter: blur(4px);
+            font-weight:bolder;
+            transition: all 0.2s;
+        }
+        ul li a:hover{
+            border: 1px solid white;
+            background-color: rgb(255, 255, 255, 0.05);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="profile">
+            <img src="foto.png" alt="Foto de perfil" id="profile-pic">
+            <p>@MikeBrito</p>
+        </div>
+        <ul>
+            <li><a href="#">Inscrever-se no NLW</a></li>
+            <li><a href="#">Baixar meu e-book</a></li>
+            <li><a href="#">Ver meu portifólio</a></li>
+            <li><a href="https://app.rocketseat.com.br/classroom/comecando-o-projeto/group/iniciando-o-html-e-css/lesson/criando-lista-em-html" target="_blank">VConheça o explorer</a></li>
+        </ul>
+        
+    </div>
+    
+</body>
+</html>
