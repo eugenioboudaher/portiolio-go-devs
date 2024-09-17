@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        
+        :root {
+            --text-color: white;
+            --bg-url: url(Background.png);
+            --stroke-color: rgb(127, 126, 126);
+            --surface-color: rgba(0, 0, 0, 0.05);
+            --switch-bg-url: url(moonstars.svg)
+        }
+        .light {
+            --text-color: black;
+            --bg-url: url(bg-desktop-light.jpg);
+            --stroke-color: rgba(0, 0, 0, 0.1);
+            --switch-bg-url: url(sun.svg)
+            
+        }
+        body {
+            background-image: var(--bg-url);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: var(--text-color);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container {
+            width: 360px;
+            height: 712px;
+            margin: auto;
+            padding-top: 56px;
+            padding: 0 24px;
+
+        }
+        #profile img {
+            width: 112px;
+            margin: auto;
+            margin-top: 20px;            
+        }
+        #profile {
+            display: flex;
+            justify-content: center;
+            font-family: 'Inter';
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-color);
+            padding: 24px;
+        }
+        #profile p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 24px 0;
+        }
+        ul li a{
+            border: 1px solid var(--stroke-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 52px;
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-family: 'Inter';
+            text-decoration: none;
+            backdrop-filter: blur(4px);
+            font-weight:bolder;
+            transition: all 0.2s;
+        }
+        ul li a:hover{
+            border: 1px solid var(--text-color);
+            background-color: rgb(255, 255, 255, 0.05);
+        }
+        #social-links {
+            display: flex;
+            padding: 24px 0;
+            justify-content: center;
+            font-size: 24px;
+            gap: 16px;
+   
+        }
+        #social-links a{
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border-radius: 50%;
+            transition: all 0.5s;
+        }
+        #social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            
+        }
+        footer {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+            font-family: "Inter";
+        }
+        #switch {
+            position: relative;
+            width: 64px;
+            height: 24px;
+
+        }
+        #switch button {
+            width: 32px;
+            height: 32px;
+            background-color: white;
+            border: 0;
+            border-radius: 50%;
+            background-image: var(--switch-bg-url);
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid black;
+            position: absolute;
+            z-index: 1;
+            left: 0px;
+            transform: translateY(-50%);
+            top: 50%;
+
+            
+        
+        }
+        #switch span {
+            display: block;
+            width: 64px;
+            height: 24px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--stroke-color);
+            backdrop-filter: blur(4px);
+            border-radius: 999px;
+            
+        }
+        .light #switch button {
+            right: 0;
+            left: initial;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="profile">
+            <img src="foto.png" alt="Foto de perfil" id="profile-pic">
+            <p>@MikeBrito</p>
+            <div id="switch" onclick="toggleMode()">
+                <button></button>
+                <span></span>             
+            </div>
+        </div>
+        <ul>
+            <li><a href="#">Inscrever-se no NLW</a></li>
+            <li><a href="#">Baixar meu e-book</a></li>
+            <li><a href="#">Ver meu portifólio</a></li>
+            <li><a href="https://app.rocketseat.com.br/classroom/comecando-o-projeto/group/iniciando-o-html-e-css/lesson/criando-lista-em-html" target="_blank">Conheça o explorer</a></li>
+        </ul>
+        <div id="social-links">
+            <a href="https://github.com/maykbrito" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a href="https://instagram.com/maykbrito" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://youtube.com/maykbrito" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+            <a href="https://linkedin.com/in/maykbrito" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+        </div>
+        <footer>
+            feito com  <ion-icon name="heart"></ion-icon>  pela <a href=""> Rocketseat</a>
+        </footer>
+        
+    </div>
+    <script>
+        function toggleMode() {
+            const html = document.documentElement;
+            const image = document.querySelector('#profile img');
+            html.classList.toggle('light')
+            if (html.classList.contains('light')){
+                image.setAttribute('src', 'light.png' )
+            }else {
+                image.setAttribute('src', 'foto.png')
+            }
+        
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
